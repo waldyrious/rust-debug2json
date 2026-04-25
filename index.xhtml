@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Rust Debug to JSON</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        textarea { width: 47%; height: 400px; padding: 10px; font-family: monospace; }
+        main { display: flex; justify-content: space-between; }
+        button { margin: 20px 0; padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Rust Debug to JSON Converter</h1>
+
+    <button id="convert-btn" disabled="disabled">Convert to JSON</button>
+
+    <main>
+        <textarea id="input" placeholder="Paste your Rust {:?} output here..."></textarea>
+        <textarea id="output" placeholder="JSON will appear here..." readonly="true"></textarea>
+    </main>
+
+    <script type="module">
+        import init, { parse_debug_to_json } from './pkg/debug_parser.js';
+
+        async function run() {
+            await init();
+
+            const convertBtn = document.getElementById('convert-btn');
+            const inputEl = document.getElementById('input');
+            const outputEl = document.getElementById('output');
+
+            convertBtn.disabled = false;
+
+            convertBtn.addEventListener('click', () => {
+                const rawDebugText = inputEl.value;
+                const jsonResult = parse_debug_to_json(rawDebugText);
+                outputEl.value = jsonResult;
+            });
+        }
+
+        run();
+    </script>
+</body>
+</html>
