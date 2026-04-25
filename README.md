@@ -11,6 +11,24 @@ that is imported via JavaScript into a plain HTML file, for browser usage.
 [debug-trait]: https://doc.rust-lang.org/std/fmt/trait.Debug.html
 [serde-dbgfmt]: https://docs.rs/serde_dbgfmt
 
+## Project files overview
+
+**Core application files**<br/>
+&ensp;🔧 `src/lib.rs` — Rust library: the core parsing and conversion logic<br/>
+&ensp;📦 `pkg/rust_debug2json_bg.wasm` — WebAssembly binary compiled from the Rust library<br/>
+&ensp;🔗 `pkg/rust_debug2json.js` — Generated JavaScript glue code for the WebAssembly module<br/>
+&ensp;🖥️  `index.xhtml` — Main HTML page containing the converter interface<br/>
+
+**Docs & metadata**<br/>
+&ensp;📖 `README.md` — Project documentation (this file)<br/>
+&ensp;⚖️ `LICENSE.md` — Simple Public License 2.0 text<br/>
+&ensp;📋 `Cargo.toml` — Rust package manifest and dependencies<br/>
+&ensp;🔒 `Cargo.lock` — Pinned dependency versions<br/>
+
+**Config & automation**<br/>
+&ensp;⚙️ `.github/workflows/ci.yml` — GitHub Actions CI workflow (runs `cargo test`)<br/>
+&ensp;🚫 `.gitignore` — Git ignore rules<br/>
+
 ## Usage
 
 Visit <https://waldyrious.github.io/rust-debug2json>,
