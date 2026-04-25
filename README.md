@@ -90,4 +90,5 @@ If you make changes to the Rust code, make sure to adapt the tests, and run them
 cargo test
 ```
 
-If the new code compiles and the tests pass, rebuild the WebAssebly as per step 3 above.
+If the new code compiles and the tests pass, rebuild the WebAssebly as per step 3 above,
+and commit the updated `pkg/rust_debug2json.js` and `pkg/rust_debug2json_bg.wasm` files.
