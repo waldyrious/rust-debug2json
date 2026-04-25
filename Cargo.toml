@@ -2,6 +2,10 @@
 name = "rust-debug2json"
 version = "0.1.0"
 edition = "2024"
+description = "Converts Rust Debug output to pretty-printed JSON"
+license = "SimPL-2.0"
+repository = "https://github.com/waldyrious/rust-debug2json"
+homepage = "https://waldyrious.github.io/rust-debug2json"
 
 [lib]
 crate-type = ["cdylib"] # Compile as a dynamic library for Wasm
