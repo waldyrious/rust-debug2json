@@ -17,7 +17,7 @@ that is imported via JavaScript into a plain HTML file, for browser usage.
 &ensp;🔧 `src/lib.rs` — Rust library: the core parsing and conversion logic<br/>
 &ensp;📦 `pkg/rust_debug2json_bg.wasm` — WebAssembly binary compiled from the Rust library<br/>
 &ensp;🔗 `pkg/rust_debug2json.js` — Generated JavaScript glue code for the WebAssembly module<br/>
-&ensp;🖥️  `index.xhtml` — Main HTML page containing the converter interface<br/>
+&ensp;🖥️  `index.html` — Main HTML page containing the converter interface<br/>
 
 **Docs & metadata**<br/>
 &ensp;📖 `README.md` — Project documentation (this file)<br/>
@@ -37,7 +37,7 @@ and click the **Convert to JSON** button.
 
 For local usage, clone the repository
 and [build the project](#building-from-source),
-then open `index.xhtml` via a local server
+then open `index.html` via a local server
 (required for the WebAssembly module to load).
 
 ## Caveats
@@ -85,7 +85,7 @@ since `wasm-pack` relies on it to manage the WebAssembly compile target.
    wasm-pack build --target web
    ```
 
-   This generates the `pkg/` directory, which is loaded by `index.xhtml` at runtime.
+   This generates the `pkg/` directory, which is loaded by `index.html` at runtime.
 
 4. Serve the repository root with any static HTTP server
    (browsers require HTTP, not a `file://` URL, for WebAssembly modules to load).
